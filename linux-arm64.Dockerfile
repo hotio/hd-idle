@@ -8,7 +8,7 @@ ADD "https://github.com/adelolmo/hd-idle/releases/download/v${VERSION}/hd-idle_$
 RUN mkdir "/tmp/hd-idle/" && dpkg -x "/tmp/hd-idle.deb" "/tmp/hd-idle/"
 
 
-FROM ghcr.io/hotio/base@sha256:f38c2fd90022ea09dbf86d1b07da382b2e6a685ba3246f65054adf1817c37291
+FROM ghcr.io/hotio/base@sha256:b5f3c59f3b8c223118002b88a936523c253f7df1cfbf270bba2df6ff480d9c03
 ENV ARGS="-d -i 1800"
 COPY --from=builder /tmp/hd-idle/usr/sbin/hd-idle /app/hd-idle
 COPY root/ /
